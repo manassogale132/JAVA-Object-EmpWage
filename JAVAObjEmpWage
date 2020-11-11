@@ -26,8 +26,11 @@ public class Main {
 	    // obj3.switchcase();
 	    
 	    
-	    ucfive obj4=new ucfive();
-	    obj4.monthwage();
+	    // ucfive obj4=new ucfive();
+	    // obj4.monthwage();
+	    
+	    ucsix obj5=new ucsix();
+	    obj5.wagecalccondition();
 	}
 	}
 
@@ -165,6 +168,49 @@ System.out.println("Day No:"+"     "+"Wage"+"     "+"TotalWage");
     	   break;
        }
 }
+	}
+}
+
+class ucsix{
+	
+	public void wagecalccondition(){
+		
+		int fwage=160;
+		int hwage=80;
+	    int nowage=0;
+	    int sum =0;
+	    
+ System.out.println("Day No:"+"     "+"Wage"+"     "+"TotalWage");
+        
+        for(int i=0;i<=30;i++) {
+        Random rand = new Random();
+        int input = rand.nextInt(3);
+        
+        if(i<=20) {
+        
+       switch(input) {
+       
+       case 2:
+    	   sum=sum+fwage;
+       	   System.out.println("Day "+i+"        "+ fwage+"        "+sum);
+       	   break;
+       case 0:
+    	   sum=sum+nowage;     
+       	   System.out.println("Day "+i+"        "+ nowage+"        "+sum);
+       	   break;
+       case 1:
+    	   sum=sum+hwage;  
+           System.out.println("Day "+i+"        "+ hwage+"        "+sum);
+       	   break;
+       default:
+    	   System.out.println("No such case");
+    	   break;
+       }
+   
+        }else {
+        	System.out.println("20 days wage calculation is done so stop the loop..");
+        }
+        }
 	}
 }
 	
