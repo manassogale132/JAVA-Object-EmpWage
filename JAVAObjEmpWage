@@ -11,8 +11,11 @@ public class Main {
 		System.out.println("-Wage Computation Program-");
 	    System.out.println("-----------------------------------------------------------------");
 	    
-	    ucone obj=new ucone();
-	    obj.attendance();
+	   // ucone obj=new ucone();
+	    //obj.attendance();
+	    
+	    uctwo obj1=new uctwo();
+	    obj1.dailywage();
 	    
 	}
 	}
@@ -31,4 +34,24 @@ public void attendance() {
 	
 }
 	}
+	
+class uctwo{
+	
+	public void dailywage() {
+		int fwage=160;
+	    int nowage=0;
+		Random rand = new Random();
+        int input = rand.nextInt(2);
+        
+        if(input == 1) {
+        	System.out.println("*Employee is Present");
+        	System.out.println("Days:"+"     "+"Fullwage");
+        	System.out.println("Day 1"+"    "+fwage);
+        }else {
+        	System.out.println("*Employee is Absent");
+        	System.out.println("Days:"+"    "+"Nowage");
+        	System.out.println("Day 1"+"    "+nowage);
+        }
+	}
+}
 	
