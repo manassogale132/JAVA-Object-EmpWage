@@ -18,10 +18,12 @@ public class Main {
 	   // obj1.dailywage();
 	    
 	    
-	      ucthree obj2=new ucthree();
-	      obj2.parttimeemp();
+	   // ucthree obj2=new ucthree();
+	   // obj2.parttimeemp();
 	    
 	    
+	    ucfour obj3=new ucfour();
+	    obj3.switchcase();
 	    
 	}
 	}
@@ -91,5 +93,42 @@ class ucthree{
 	}
 	
 }
+
+class ucfour{
+	
+	public void switchcase() {
+		
+		int fwage=160;
+		int hwage=80;
+	    int nowage=0;
+	    
+	    Random rand = new Random();
+        int input = rand.nextInt(3);
+        
+       switch(input) {
+       
+       case 2:
+    	   System.out.println("*Employee is Present");
+       	   System.out.println("Days:"+"     "+"Fullwage");
+       	   System.out.println("Day 1"+"     "+fwage);
+       	   break;
+       case 0:
+    	   System.out.println("*Employee is Absent");
+       	   System.out.println("Days:"+"    "+"Nowage");
+       	   System.out.println("Day 1"+"    "+nowage);
+       	   break;
+       case 1:
+    	   System.out.println("*Employee is Parttime");
+           System.out.println("Days:"+"    "+"Halfwage");
+       	   System.out.println("Day 1"+"    "+hwage);
+       	   break;
+       default:
+    	   System.out.println("No such case");
+    	   break;
+       }
+	}
+}
+	
+	
 	
 	
