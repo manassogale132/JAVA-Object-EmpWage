@@ -14,8 +14,14 @@ public class Main {
 	   // ucone obj=new ucone();
 	    //obj.attendance();
 	    
-	    uctwo obj1=new uctwo();
-	    obj1.dailywage();
+	   // uctwo obj1=new uctwo();
+	   // obj1.dailywage();
+	    
+	    
+	      ucthree obj2=new ucthree();
+	      obj2.parttimeemp();
+	    
+	    
 	    
 	}
 	}
@@ -54,4 +60,36 @@ class uctwo{
         }
 	}
 }
+
+class ucthree{
+	
+	public void parttimeemp(){
+		
+		int fwage=160;
+		int hwage=80;
+	    int nowage=0;
+     
+        Random rand = new Random();
+        int input = rand.nextInt(3);
+        
+        if(input == 2) {
+        	System.out.println("*Employee is Present");
+        	System.out.println("Days:"+"     "+"Fullwage");
+        	System.out.println("Day 1"+"     "+fwage);
+        }else if(input == 0){
+        	System.out.println("*Employee is Absent");
+        	System.out.println("Days:"+"    "+"Nowage");
+        	System.out.println("Day 1"+"    "+nowage);
+        }else{
+        	System.out.println("*Employee is Parttime");
+        	System.out.println("Days:"+"    "+"Halfwage");
+        	System.out.println("Day 1"+"    "+hwage);
+        
+        
+	}
+		
+	}
+	
+}
+	
 	
