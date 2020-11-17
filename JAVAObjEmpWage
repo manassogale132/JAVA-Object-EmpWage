@@ -10,17 +10,11 @@ public class Main {
 		System.out.println("-----------------------------------------------------------------");
 		System.out.println("-Wage Computation Program-");
 	    System.out.println("-----------------------------------------------------------------");
-	
-	    
 	    
 	    ucfour obj3=new ucfour();
-	    obj3.switchcase();
-	    
+	    obj3.switchcase();	    
 	}
 	}
-
-
-
 class ucfour{
 	
 	public void switchcase() {
