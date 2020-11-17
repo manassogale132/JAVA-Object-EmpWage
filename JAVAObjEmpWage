@@ -11,8 +11,7 @@ public class Main {
 		System.out.println("-Wage Computation Program-");
 	    System.out.println("-----------------------------------------------------------------");
 	    
-	   // ucone obj=new ucone();
-	    //obj.attendance();
+	 
 	    
 	    uctwo obj1=new uctwo();
 	    obj1.dailywage();
@@ -20,20 +19,7 @@ public class Main {
 	}
 	}
 
-class ucone{
-	
-public void attendance() {
-	 Random rand = new Random();
-     int input=rand.nextInt(2);
-     
-     if(input == 1) {
-     	System.out.println("*Employee is Present");
-     }else {
-     	System.out.println("*Employee is Absent");
-     }
-	
-}
-	}
+
 	
 class uctwo{
 	
