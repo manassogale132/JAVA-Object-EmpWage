@@ -10,14 +10,12 @@ public class Main {
 		System.out.println("-----------------------------------------------------------------");
 		System.out.println("-Wage Computation Program-");
 	    System.out.println("-----------------------------------------------------------------");
-	   
-	    
+	 
 	    
 	      ucthree obj2=new ucthree();
 	      obj2.parttimeemp();
 	    
-	    
-	    
+	     
 	}
 	}
 
@@ -44,8 +42,7 @@ class ucthree{
         }else{
         	System.out.println("*Employee is Parttime");
         	System.out.println("Days:"+"    "+"Halfwage");
-        	System.out.println("Day 1"+"    "+hwage);
-        
+        	System.out.println("Day 1"+"    "+hwage);   
         
 	}
 		
