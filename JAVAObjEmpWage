@@ -26,7 +26,8 @@ public class Main {
 }
 }
 
-package EmpWageInterface;
+
+package EmpWageInterface;                               ------> Interface
 
 public interface empwageinterface {
 
@@ -35,7 +36,7 @@ public interface empwageinterface {
 }
 
 
-package EmpWageInterface;
+package EmpWageInterface;                              ---------> Class that implements the above interface
 
 import java.util.ArrayList;
 import java.util.Random;
