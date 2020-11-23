@@ -1,238 +1,122 @@
-package EmpWageCalcJavaObj;
+package EmpWageInterface;
 
-import java.util.Random;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
+		Scanner scan=new Scanner(System.in);
 		
-		Cases ob=new Cases();
-		System.out.println("-Welcome Employee-");
-		System.out.println("-----------------------------------------------------------------");
-		System.out.println("-Wage Computation Program-");
-	    System.out.println("-----------------------------------------------------------------");
-	    
-	   Scanner scan=new Scanner(System.in);
-	   
-	    System.out.println("--Select any 1 of the Company to get their Emp Wage--");
-	    System.out.println("                  ");
-	    System.out.println("1 - Vijay Sales");
-	    System.out.println("                  ");
-	    System.out.println("2 - Kohinoor");
-	    System.out.println("                  ");
-	    System.out.println("3 - Reliance Digital");
-	 
-	    int input = 0;
-		do {
-	  int input1=scan.nextInt();
-	  
-	  
-	  switch(input1) {
-	  
-	  case 1:
-		  System.out.println("-----------------------------------------------------------------");  
-		System.out.println("-Vijay Sales Selected-"); 
-		System.out.println("-----------------------------------------------------------------");
-	    ob.vijaysales();
-	    break;
-	    
-	  case 2:
-		  System.out.println("-----------------------------------------------------------------");
-		  System.out.println("-Kohinoor Selected-");  
-		  System.out.println("-----------------------------------------------------------------");
-		  ob.kohinoor();
-		   break; 
+		System.out.println("-Employee Wage Builder-");
 		
-	  case 3:
-		  System.out.println("-----------------------------------------------------------------");
-		  System.out.println("-Reliance Digital Selected-");
-		  System.out.println("-----------------------------------------------------------------");
-		    ob.relianceD();
-		    break;
+		//Taking input for user.
+		//Making separate object for each company i.e(company 1,company 2,company 3) using interface.
 		
-	  default:
-		  System.out.println("No such case");
-		    
-	  }
-	    }while(input!=3);
-	    
-	    
-	}
-	}
+		empwageinterface company1=new companies();
+        company1.comp1();
+        
+        empwageinterface company2=new companies();
+        company2.comp1();
+        
+        empwageinterface company3=new companies();
+        company3.comp1();
+       
+        
+}
+}
 
-package EmpWageCalcJavaObj;
+package EmpWageInterface;
 
+public interface empwageinterface {
+
+	public void comp1();
+	
+}
+
+
+package EmpWageInterface;
+
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Cases {
+public class companies implements empwageinterface {
 
-public void vijaysales(){
-			
-			Scanner scan=new Scanner(System.in);
-			
-			System.out.println("1-Enter Full Wage");
-			int fwage=scan.nextInt();
-			System.out.println("2-Enter Half Wage");
-			int hwage=scan.nextInt();
-			System.out.println("3-Enter No Wage");
-		    int nowage=scan.nextInt();
-		    
-		    int sum=0;
-		    
-		    System.out.println("-----------------------------------------------------------------");
-		    System.out.println("Wages are in Dollars '$'");
-		    System.out.println("Fwage="+fwage+"    "+"(Present)");         
-		    System.out.println("Hwage="+hwage+"     "+"(Partime)");        
-		    System.out.println("NOwage="+nowage+"     "+"(Absent)");  
-		    System.out.println("         ");
-		    System.out.println("Working Days="+20);
-		    System.out.println("         ");
-		    System.out.println("-----------------------------------------------------------------");
+	@Override
+	
+	public void comp1() {
+		
+		
+		Scanner scan=new Scanner(System.in);
+		
+		ArrayList<Integer> sums=new ArrayList<>();
+				
+		System.out.println("-----------------------------------------------------------------");
+		System.out.println("       ");
+		System.out.println("-:Enter a Company name:-");
+		String comp1=scan.nextLine();
+		System.out.println("1-Enter Full Wage");
+		int fwage=scan.nextInt();
+		System.out.println("2-Enter Half Wage");
+		int hwage=scan.nextInt();
+		System.out.println("3-Enter No Wage");
+	    int nowage=scan.nextInt();
+	    System.out.println("4-Enter Number of Working Days");
+	    int wdays=scan.nextInt();
+	    
+	    int sum=0;
+	    
+	    
+	    System.out.println("-----------------------------------------------------------------");
+	    System.out.println("Wages are in Dollars '$'");
+	    System.out.println("          ");
+	    System.out.println("Fwage="+fwage+"    "+"(Present)");         
+	    System.out.println("Hwage="+hwage+"     "+"(Partime)");        
+	    System.out.println("NOwage="+nowage+"     "+"(Absent)");  
+	    System.out.println("         ");
+	    System.out.println("Working Days="+wdays);
+	    System.out.println("         ");
+	    System.out.println("-----------------------------------------------------------------");
 
-		    
-	System.out.println("Day No:"+"     "+"Wage"+"     "+"TotalWage");
-	System.out.println("         ");
-	        
-	        for(int i=0;i<=20;i++) {
-	        Random rand = new Random();
-	        int input = rand.nextInt(3);
-	        
-	       switch(input) {
-	       
-	       case 2:
-	    	   sum=sum+fwage;
-	       	   System.out.println("Day "+i+"        "+ fwage+"        "+sum);
-	       	   break;
-	       case 0:
-	    	   sum=sum+nowage;     
-	       	   System.out.println("Day "+i+"        "+ nowage+"        "+sum);
-	       	   break;
-	       case 1:
-	    	   sum=sum+hwage;  
-	           System.out.println("Day "+i+"        "+ hwage+"        "+sum);
-	       	   break;
-	       default:
-	    	   System.out.println("No such case");
-	    	   break;   
-	    	   
-	       }
-	      
+	    
+        System.out.println("Day No:"+"     "+"Wage"+"     "+"TotalWage");
+        System.out.println("         ");
+        
+        for(int i=1;i<=wdays;i++) {
+        Random rand = new Random();
+        int input = rand.nextInt(3);
+        
+       switch(input) {
+       
+       case 2:
+    	   sum=sum+fwage;
+       	   System.out.println("Day "+i+"        "+ fwage+"        "+sum);
+       	   break;
+       case 0:
+    	   sum=sum+nowage;     
+       	   System.out.println("Day "+i+"        "+ nowage+"        "+sum);
+       	   break;
+       case 1:
+    	   sum=sum+hwage;  
+           System.out.println("Day "+i+"        "+ hwage+"        "+sum);
+       	   break;
+       default:
+    	   System.out.println("No such case");
+    	   break;   
+    	   
+       }     
+}
+        System.out.println("-----------------------------------------------------------------");
+        System.out.println("Total Wage of Month :"+comp1+":"+sum+"$");
+        System.out.println("    ");
+        System.out.println("-----------------------------------------------------------------");
+        
+        sums.add(sum);
+        System.out.println(sums);
+       
 	}
-	        System.out.println("-----------------------------------------------------------------");
-	        System.out.println("Total Wage of day :"+sum+"$");
-		}
 	
-
-public void kohinoor(){
-	Scanner scan=new Scanner(System.in);
-	
-	System.out.println("1-Enter Full Wage");
-	int fwage=scan.nextInt();
-	System.out.println("2-Enter Half Wage");
-	int hwage=scan.nextInt();
-	System.out.println("3-Enter No Wage");
-    int nowage=scan.nextInt();
-    
-    int sum =0;
-    
-    System.out.println("-----------------------------------------------------------------");
-    System.out.println("Wages are in Dollars '$'");
-    System.out.println("Fwage="+fwage+"    "+"(Present)");
-    System.out.println("Hwage="+hwage+"     "+"(Partime)");
-    System.out.println("NOwage="+nowage+"     "+"(Absent)");
-    System.out.println("         ");
-    System.out.println("Working Days="+25);
-    
-    System.out.println("         ");
-    System.out.println("-----------------------------------------------------------------");
- 
-    
-    
-System.out.println("Day No:"+"     "+"Wage"+"     "+"TotalWage");
-System.out.println("         ");
-    
-    for(int i=0;i<=25;i++) {
-    Random rand = new Random();
-    int input = rand.nextInt(3);
-    
-   switch(input) {
-   
-   case 2:
-	   sum=sum+fwage;
-   	   System.out.println("Day "+i+"        "+ fwage+"        "+sum);
-   	   break;
-   case 0:
-	   sum=sum+nowage;     
-   	   System.out.println("Day "+i+"        "+ nowage+"        "+sum);
-   	   break;
-   case 1:
-	   sum=sum+hwage;  
-       System.out.println("Day "+i+"        "+ hwage+"        "+sum);
-   	   break;
-   default:
-	   System.out.println("No such case");
-	   break;
-   }
-}
-    System.out.println("-----------------------------------------------------------------");
-    System.out.println("Total Wage of day :"+sum+"$");
-}
-
-
-public void relianceD(){
-	Scanner scan=new Scanner(System.in);
-	
-	System.out.println("1-Enter Full Wage");
-	int fwage=scan.nextInt();
-	System.out.println("2-Enter Half Wage");
-	int hwage=scan.nextInt();
-	System.out.println("3-Enter No Wage");
-    int nowage=scan.nextInt();
-    
-    int sum =0;
-    
-    System.out.println("-----------------------------------------------------------------");
-    System.out.println("Wages are in Dollars '$'");
-    System.out.println("Fwage="+fwage+"    "+"(Present)");
-    System.out.println("Hwage="+hwage+"     "+"(Partime)");
-    System.out.println("NOwage="+nowage+"     "+"(Absent)");
-    System.out.println("         ");
-    System.out.println("Working Days="+28);
-    
-    System.out.println("         ");
-    System.out.println("-----------------------------------------------------------------");
-    
-System.out.println("Day No:"+"     "+"Wage"+"     "+"TotalWage");
-System.out.println("         ");
-    
-    for(int i=0;i<=28;i++) {
-    Random rand = new Random();
-    int input = rand.nextInt(3);
-    
-   switch(input) {
-   
-   case 2:
-	   sum=sum+fwage;
-   	   System.out.println("Day "+i+"        "+ fwage+"        "+sum);
-   	   break;
-   case 0:
-	   sum=sum+nowage;     
-   	   System.out.println("Day "+i+"        "+ nowage+"        "+sum);
-   	   break;
-   case 1:
-	   sum=sum+hwage;  
-       System.out.println("Day "+i+"        "+ hwage+"        "+sum);
-   	   break;
-   default:
-	   System.out.println("No such case");
-	   break;
-   }
-}
-    System.out.println("-----------------------------------------------------------------");
-    System.out.println("Total Wage of day :"+sum+"$");
-}
 
 }
 	
